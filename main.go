@@ -242,7 +242,7 @@ func main() {
 			os.Exit(1)
 		}
 
-		fmt.Println()
+		fmt.Printf("All set up. Waiting for messages for %v.\n\n", selectedNumber[0])
 
 		for {
 			time.Sleep(1 * time.Second)
