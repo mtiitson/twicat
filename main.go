@@ -176,7 +176,7 @@ func fetchNgrokUrl(client http.Client, portNum int) (string, error) {
 	}
 	var url string
 	for _, tunnel := range tunnelsResponse.Tunnels {
-		if tunnel.Proto == "https" && tunnel.Config.Addr == "localhost:" + port {
+		if tunnel.Proto == "https" && strings.HasSuffix(tunnel.Config.Addr, ":" + port) {
 			return tunnel.PublicURL, nil
 		}
 	}
